@@ -26,7 +26,7 @@ namespace Castle.MonoRail.Views.Spark.Tests
     using Castle.MonoRail.Framework.Services;
     using NUnit.Framework;
     using global::Spark;
-    using NUnit.Framework.SyntaxHelpers;
+    
 
 
     [TestFixture]
@@ -191,7 +191,7 @@ namespace Castle.MonoRail.Views.Spark.Tests
 			using (new CurrentCultureScope(""))
 			{
 				manager.Process("Home\\LateBoundExpressionShouldCallEval", output, engineContext, controller, controllerContext);
-				Assert.That(output.ToString(), Text.Contains(string.Format("<p>world {0:#,##0.00}</p>", 1005.3)));
+				Assert.That(output.ToString(), Is.StringContaining(string.Format("<p>world {0:#,##0.00}</p>", 1005.3)));
 			}
         }
     }

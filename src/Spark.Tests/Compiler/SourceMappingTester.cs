@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.SyntaxHelpers;
+
 using Spark.FileSystem;
 using Spark.Tests.Stubs;
 
@@ -149,8 +149,8 @@ Hello
             var contents = RenderView(new SparkViewDescriptor()
                                           .AddTemplate("Home\\Index.spark"));
 
-            Assert.That(contents, Text.Contains("Hello"));
-            Assert.That(contents, Text.DoesNotContain("warning"));
+            Assert.That(contents, Is.StringContaining("Hello"));
+            Assert.That(contents, Is.Not.StringContaining("warning"));
         }
     }
 }

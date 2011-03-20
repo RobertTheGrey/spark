@@ -14,7 +14,7 @@
 // 
 using System;
 using System.Collections.Generic;
-using NUnit.Framework.SyntaxHelpers;
+
 using Spark.Compiler;
 using NUnit.Framework;
 using Spark.Compiler.VisualBasic;
@@ -339,7 +339,7 @@ namespace Spark.Tests.Compiler
                                         new SendLiteralChunk{ Text = "Hello world"}
                                     });
             var instance = compiler.CreateInstance();
-            Assert.That(instance, Is.InstanceOfType(typeof(StubSparkView2)));
+            Assert.That(instance, Is.InstanceOf(typeof(StubSparkView2)));
         }
 
 
@@ -358,8 +358,8 @@ namespace Spark.Tests.Compiler
                                         new SendLiteralChunk {Text = "Hello world"}
                                     });
             var instance = compiler.CreateInstance();
-            Assert.That(instance, Is.InstanceOfType(typeof(StubSparkView2)));
-            Assert.That(instance, Is.InstanceOfType(typeof(StubSparkView2<Comment>)));
+            Assert.That(instance, Is.InstanceOf(typeof(StubSparkView2)));
+            Assert.That(instance, Is.InstanceOf(typeof(StubSparkView2<Comment>)));
         }
 
         [Test]
@@ -376,9 +376,9 @@ namespace Spark.Tests.Compiler
                                         new SendLiteralChunk {Text = "Hello world"}
                                     });
             var instance = compiler.CreateInstance();
-            Assert.That(instance, Is.InstanceOfType(typeof(StubSparkView2)));
-            Assert.That(instance, Is.InstanceOfType(typeof(StubSparkView2<Comment>)));
-            Assert.That(instance, Is.InstanceOfType(typeof(StubSparkView3<Comment, string>)));
+            Assert.That(instance, Is.InstanceOf(typeof(StubSparkView2)));
+            Assert.That(instance, Is.InstanceOf(typeof(StubSparkView2<Comment>)));
+            Assert.That(instance, Is.InstanceOf(typeof(StubSparkView3<Comment, string>)));
         }
     }
 }
